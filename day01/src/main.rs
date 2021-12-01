@@ -1,3 +1,5 @@
+use itertools::Itertools;
+
 const INPUT: &str = include_str!("../input.txt");
 
 fn parse_input(input: &str) -> Vec<usize> {
@@ -10,15 +12,17 @@ fn parse_input(input: &str) -> Vec<usize> {
 
 fn part1(input: &[usize]) -> usize {
     input
-        .windows(2)
-        .filter(|w| w[0] < w[1])
+        .iter()
+        .tuple_windows()
+        .filter(|(first, second)| first < second)
         .count()
 }
 
 fn part2(input: &[usize]) -> usize {
     input
-        .windows(4)
-        .filter(|w| w[0] < w[3])
+        .iter()
+        .tuple_windows()
+        .filter(|(first, _, _, fourth)| first < fourth)
         .count()
 }
 
