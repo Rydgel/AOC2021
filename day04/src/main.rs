@@ -105,6 +105,6 @@ mod tests {
     fn p2() {
         let input = parse_input(TEST_INPUT);
         let result = part2(input);
-        assert_eq!(result, 230);
+        assert_eq!(result, 1924);
     }
 }
