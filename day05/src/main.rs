@@ -20,23 +20,27 @@ fn parse_input(input: &str) -> Vec<VentLine> {
         .collect_vec()
 }
 
-fn num_overlapping<'a>(lines: impl Iterator<Item=&'a VentLine>) -> usize {
+fn num_overlapping<'a>(lines: impl Iterator<Item = &'a VentLine>) -> usize {
     let mut points = HashMap::new();
-    for &VentLine{x1, y1, x2, y2} in lines {
-      let dx = (x2 - x1).signum();
-      let dy = (y2 - y1).signum();
-      let (mut x, mut y) = (x1, y1);
-      while (x, y) != (x2 + dx, y2 + dy) {
-        *points.entry((x, y)).or_insert(0) += 1;
-        x += dx;
-        y += dy;
-      }
+    for &VentLine { x1, y1, x2, y2 } in lines {
+        let dx = (x2 - x1).signum();
+        let dy = (y2 - y1).signum();
+        let (mut x, mut y) = (x1, y1);
+        while (x, y) != (x2 + dx, y2 + dy) {
+            *points.entry((x, y)).or_insert(0) += 1;
+            x += dx;
+            y += dy;
+        }
     }
     points.values().filter(|&&n| n > 1).count()
-  }
+}
 
 fn part1(input: &[VentLine]) -> usize {
-    num_overlapping(input.iter().filter(|&VentLine{x1, y1, x2, y2}| x1 == x2 || y1 == y2))
+    num_overlapping(
+        input
+            .iter()
+            .filter(|&VentLine { x1, y1, x2, y2 }| x1 == x2 || y1 == y2),
+    )
 }
 
 fn part2(input: &[VentLine]) -> usize {
