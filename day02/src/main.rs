@@ -54,8 +54,8 @@ fn part2(input: &[Instructions]) -> usize {
 
 fn main() {
     let input = parse_input(INPUT);
-    println!("day1 p1: {:?}", part1(&input));
-    println!("day1 p2: {:?}", part2(&input));
+    println!("day02 p1: {:?}", part1(&input));
+    println!("day02 p2: {:?}", part2(&input));
 }
 
 #[cfg(test)]

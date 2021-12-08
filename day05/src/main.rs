@@ -49,8 +49,8 @@ fn part2(input: &[VentLine]) -> usize {
 
 fn main() {
     let input = parse_input(INPUT);
-    println!("day1 p1: {:?}", part1(&input));
-    println!("day1 p2: {:?}", part2(&input));
+    println!("day05 p1: {:?}", part1(&input));
+    println!("day05 p2: {:?}", part2(&input));
 }
 
 #[cfg(test)]

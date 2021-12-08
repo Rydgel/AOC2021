@@ -73,8 +73,8 @@ fn part2(input: &[u32], width: u32) -> u32 {
 fn main() {
     let input = parse_input(INPUT);
     let width = width(&input);
-    println!("day1 p1: {:?}", part1(&input, width));
-    println!("day1 p2: {:?}", part2(&input, width));
+    println!("day03 p1: {:?}", part1(&input, width));
+    println!("day03 p2: {:?}", part2(&input, width));
 }
 
 #[cfg(test)]

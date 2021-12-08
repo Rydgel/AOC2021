@@ -84,8 +84,8 @@ fn part2((draws, mut boards): (Vec<i64>, Vec<Board>)) -> i64 {
 
 fn main() {
     let input = parse_input(INPUT);
-    println!("day1 p1: {:?}", part1(input.clone()));
-    println!("day1 p2: {:?}", part2(input));
+    println!("day04 p1: {:?}", part1(input.clone()));
+    println!("day04 p2: {:?}", part2(input));
 }
 
 #[cfg(test)]
